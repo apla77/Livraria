@@ -18,7 +18,7 @@ public class LivroDaoImpl extends AbstractDao<Livro, Long> implements LivroDao{
 	@Override
 		public List<Livro> findByAutorId(Long id) {
 	
-		return createQuery("select l from Autor l where l.autor.id = ?1", id);
+		return createQuery("select l from Livro l where l.autor.id = ?1", id);
 	}
 
 }

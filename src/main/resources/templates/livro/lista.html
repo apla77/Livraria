@@ -35,7 +35,7 @@
 	                    <div class="collapse" id="collapseNome">
 	
 	                        <nav class="navbar navbar-light bg-light">
-	                            <form class="form-inline" method="GET" th:action="@{/livross/buscar/titulo}">
+	                            <form class="form-inline" method="GET" th:action="@{/livros/buscar/titulo}">
 	                                <input class="form-control mr-sm-2" type="search" placeholder="titulo" aria-label="Search"
 	                                       th:name="titulo" />
 	                                <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
@@ -45,6 +45,7 @@
 	                    </div>
 	                </div>
 	            </div>
+	            <!-- 
 				<div class="row">
 	                <div class="col">
 	                    <div class="collapse" id="collapseCargo">
@@ -62,7 +63,7 @@
 	                    </div>
 	                </div>
 	            </div>
-
+				 -->
 	            <div class="table-responsive">
 	            
 	            	<div th:replace="fragments/alert"></div>
