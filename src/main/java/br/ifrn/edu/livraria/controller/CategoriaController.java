@@ -21,8 +21,6 @@ public class CategoriaController {
 	
 	@Autowired
 	private CategoriaService categoriaService;
-//	@Autowired
-//	private DepartamentoService departamentoService;
 
 	@GetMapping("/cadastrar")
 	public String cadastrar(Categoria categoria) {

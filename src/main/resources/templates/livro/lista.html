@@ -45,7 +45,7 @@
 	                    </div>
 	                </div>
 	            </div>
-	            <!-- 
+	            <!--  
 				<div class="row">
 	                <div class="col">
 	                    <div class="collapse" id="collapseCargo">
@@ -63,7 +63,7 @@
 	                    </div>
 	                </div>
 	            </div>
-				 -->
+	            -->
 	            <div class="table-responsive">
 	            
 	            	<div th:replace="fragments/alert"></div>
@@ -74,7 +74,9 @@
 	                        <th>#</th>
 	                        <th>Titulo</th>
 	                        <th>Sinopse</th>
+	                        <th>Categoria</th>
 	                        <th>Autor</th>
+	                        <th>Editora</th>
 	                        <th>Ação</th>
 	                    </tr>
 	                    </thead>
@@ -83,7 +85,9 @@
 		                        <td th:text="${l.id}">2</td>
 		                        <td th:text="${l.titulo}">Maria de Fátima</td>
 		                        <td th:text="${l.sinopse}">Esse livro fala só de amor...</td>
+		                        <td th:text="${l.categoria.nome}">Totonho Tinto</td>
 		                        <td th:text="${l.autor.nome}">Totonho Pinto</td>
+		                        <td th:text="${l.editora.nome}">Totonho Pinto</td>
 		                        <td colspan="2">
 		                            <a class="btn btn-info btn-sm" th:href="@{/livros/editar/{id} (id=${l.id}) }" role="button">
 		                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>

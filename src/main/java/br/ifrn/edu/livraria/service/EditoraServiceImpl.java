@@ -6,49 +6,49 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.ifrn.edu.livraria.dao.AutorDao;
-import br.ifrn.edu.livraria.domain.Autor;
+import br.ifrn.edu.livraria.dao.EditoraDao;
+import br.ifrn.edu.livraria.domain.Editora;
 
 @Service @Transactional(readOnly = false)
-public class AutorServiceImpl implements AutorService{
-	
-	@Autowired
-	private AutorDao dao;
+public class EditoraServiceImpl implements EditoraService{
 
+	@Autowired
+	private EditoraDao dao;
+	
 	@Override
-	public void salvar(Autor autor) {
-		dao.save(autor);
+	public void salvar(Editora editora) {
+		dao.save(editora);
 		
 	}
 
 	@Override
-	public void editar(Autor autor) {
-		dao.update(autor);
+	public void editar(Editora editora) {
+		dao.update(editora);
 		
 	}
 
 	@Override
 	public void excluir(Long id) {
-		dao.delete(id);	
+		dao.delete(id);
 		
 	}
 
 	@Override
-	public Autor buscarPorId(Long id) {
+	public Editora buscarPorId(Long id) {
 		return dao.findById(id); 
 	}
 
 	@Override
-	public List<Autor> buscarTodos() {
+	public List<Editora> buscarTodos() {
 		return dao.findAll();
 	}
 
 	@Override
-	public boolean autorTemLivros(Long id) {
+	public boolean editoraTemLivros(Long id) {
 		if (buscarPorId(id).getLivros().isEmpty()) {
 			return false;
 		}
 		return true;
-	} 
+	}
 
 }

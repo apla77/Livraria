@@ -22,8 +22,6 @@ public class AutorController {
 	
 	@Autowired
 	private AutorService autorService;
-//	@Autowired
-//	private DepartamentoService departamentoService;
 
 	@GetMapping("/cadastrar")
 	public String cadastrar(Autor autor) {

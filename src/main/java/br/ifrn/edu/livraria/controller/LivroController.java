@@ -14,8 +14,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.ifrn.edu.livraria.domain.Autor;
+import br.ifrn.edu.livraria.domain.Categoria;
+import br.ifrn.edu.livraria.domain.Editora;
 import br.ifrn.edu.livraria.domain.Livro;
 import br.ifrn.edu.livraria.service.AutorService;
+import br.ifrn.edu.livraria.service.CategoriaService;
+import br.ifrn.edu.livraria.service.EditoraService;
 import br.ifrn.edu.livraria.service.LivroService;
 
 @Controller
@@ -26,6 +30,10 @@ public class LivroController {
 	private LivroService livroService;
 	@Autowired
 	private AutorService autorService;
+	@Autowired
+	private CategoriaService categoriaService;
+	@Autowired
+	private EditoraService editoraService;
 
 	@GetMapping("/cadastrar")
 	public String cadastrar(Livro livro) {
@@ -71,10 +79,25 @@ public class LivroController {
 		return "/livro/lista";
 	}
 	
+	@ModelAttribute("categorias")
+	public List<Livro> listaDeLivros() {
+		return livroService.buscarTodos();
+	}	
+	
 		
 	@ModelAttribute("autores")
 	public List<Autor> getAutores() {
 		return autorService.buscarTodos();
+	}
+	
+	@ModelAttribute("categorias")
+	public List<Categoria> getCategorias() {
+		return categoriaService.buscarTodos();
+	}
+	
+	@ModelAttribute("editoras")
+	public List<Editora> getEditoras() {
+		return editoraService.buscarTodos();
 	}
 	
 }

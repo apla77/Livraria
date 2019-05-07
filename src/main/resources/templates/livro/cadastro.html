@@ -57,6 +57,30 @@
 	                        </div>
 	                    </div>
 	                </div>
+	                <div class="form-row">
+	                    <div class="form-group col-md-7">
+	                        <label for="categoria">Categoria</label>
+	                        <select id="categoria" class="form-control" th:field="*{categoria}">
+	                            <option value="">Selecione...</option>
+	                            <option th:each="c : ${categorias}" th:value="${c.id}" th:text="${c.nome}"></option>
+	                        </select>
+	                        <div class="invalid-feedback">
+	
+	                        </div> 
+	                    </div>
+	                </div>
+	                 <div class="form-row">
+	                    <div class="form-group col-md-7">
+	                        <label for="editora">Editora</label>
+	                        <select id="editora" class="form-control" th:field="*{editora}">
+	                            <option value="">Selecione...</option>
+	                            <option th:each="e : ${editoras}" th:value="${e.id}" th:text="${e.nome}"></option>
+	                        </select>
+	                        <div class="invalid-feedback">
+	
+	                        </div>
+	                    </div>
+	                </div>
 	                <input type="hidden" id="id" th:field="*{id}"/>
 	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
 	            </form>

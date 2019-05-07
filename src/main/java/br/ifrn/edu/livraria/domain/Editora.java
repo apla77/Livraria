@@ -9,14 +9,25 @@ import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "CATEGORIAS")
-public class Categoria extends AbstractEntity<Long>{
+@Table(name = "EDITORAS")
+public class Editora extends AbstractEntity<Long>{
 
-	@OneToMany(mappedBy = "categoria")
+	@OneToMany(mappedBy = "editora")
 	private List<Livro> livros;
 	
 	@Column(name = "nome", nullable = false, unique = true, length = 60)
 	private String nome;
+	
+	@Column(name = "cidade", nullable = false, length = 60)
+	private String cidade;
+
+	public List<Livro> getLivros() {
+		return livros;
+	}
+
+	public void setLivros(List<Livro> livros) {
+		this.livros = livros;
+	}
 
 	public String getNome() {
 		return nome;
@@ -26,12 +37,13 @@ public class Categoria extends AbstractEntity<Long>{
 		this.nome = nome;
 	}
 
-	public List<Livro> getLivros() {
-		return livros;
+	public String getCidade() {
+		return cidade;
 	}
 
-	public void setLivros(List<Livro> livros) {
-		this.livros = livros;
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
 	}
+	
 	
 }

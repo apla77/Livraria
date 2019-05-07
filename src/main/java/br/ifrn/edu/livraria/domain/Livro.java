@@ -26,6 +26,10 @@ public class Livro extends AbstractEntity<Long>{
 	@ManyToOne
 	@JoinColumn(name = "autor_id_fk")
 	private Autor autor;
+	
+	@ManyToOne
+	@JoinColumn(name = "editora_id_fk")
+	private Editora editora;
 
 	public String getTitulo() {
 		return titulo;
@@ -57,6 +61,14 @@ public class Livro extends AbstractEntity<Long>{
 
 	public void setAutor(Autor autor) {
 		this.autor = autor;
+	}
+
+	public Editora getEditora() {
+		return editora;
+	}
+
+	public void setEditora(Editora editora) {
+		this.editora = editora;
 	}
 	
 }

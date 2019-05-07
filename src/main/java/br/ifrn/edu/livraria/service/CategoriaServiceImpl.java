@@ -42,19 +42,12 @@ public class CategoriaServiceImpl implements CategoriaService{
 		
 		return dao.findAll();
 	}
-/*
+
 	@Override
 	public boolean categoriaTemLivros(Long id) {
 		if (buscarPorId(id).getLivros().isEmpty()) {
 			return false;
 		}
 		return true;
-	}
-	*/
-
-	@Override
-	public boolean categoriaTemLivros(Long id) {
-		// TODO Auto-generated method stub
-		return false;
 	}
 }
