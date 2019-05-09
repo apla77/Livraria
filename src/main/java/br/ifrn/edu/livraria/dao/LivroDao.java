@@ -18,6 +18,6 @@ public interface LivroDao {
     
     List<Livro> findByAutorId(Long id);
     
-    List<Livro> findByTitulo(String nome); 
+    List<Livro> findByTitulo(String titulo); 
 
 }
