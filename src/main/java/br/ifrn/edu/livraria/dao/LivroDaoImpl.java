@@ -10,6 +10,7 @@ import br.ifrn.edu.livraria.domain.Livro;
 @Repository
 public class LivroDaoImpl extends AbstractDao<Livro, Long> implements LivroDao{
 	
+	
 	public List<Livro> findByTitulo(String titulo) {
 		
 		return createQuery("select l from Livro l where l.titulo like concat('%',?1,'%') ", titulo);
@@ -20,4 +21,5 @@ public class LivroDaoImpl extends AbstractDao<Livro, Long> implements LivroDao{
 	
 		return createQuery("select l from Livro l where l.autor.id = ?1", id);
 	}
+	
 }

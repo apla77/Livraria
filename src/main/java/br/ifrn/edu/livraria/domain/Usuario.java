@@ -4,7 +4,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -28,7 +28,7 @@ public class Usuario extends AbstractEntity<Long>{
 	@Column(name = "bairro", nullable = false, unique = true, length = 60)
 	private String bairro;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "cidade_id_fk")
 	private Cidade cidade;
 
