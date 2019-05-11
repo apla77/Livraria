@@ -15,9 +15,5 @@ public interface UsuarioDao {
     Usuario findById(Long id);
 
     List<Usuario> findAll();
-    
-    List<Usuario> findByUsuarioId(Long id);
-    
-    List<Usuario> findByNome(String nome); 
 
 }

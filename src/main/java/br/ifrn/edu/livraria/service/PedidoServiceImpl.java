@@ -6,27 +6,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.ifrn.edu.livraria.dao.UsuarioDao;
-import br.ifrn.edu.livraria.domain.Usuario;
+import br.ifrn.edu.livraria.dao.PedidoDao;
+import br.ifrn.edu.livraria.domain.Pedido;
 
-@Service 
-@Transactional(readOnly = false)
-public class UsuarioServiceImpl implements UsuarioService{
+@Service
+@Transactional(readOnly = true)
+public class PedidoServiceImpl implements PedidoService{
 
 	@Autowired
-	private UsuarioDao dao;
+	private PedidoDao dao;
 	
 	@Transactional(readOnly = false)
 	@Override
-	public void salvar(Usuario usuario) {
-		dao.save(usuario);
+	public void salvar(Pedido pedido) {
+		dao.save(pedido);
 		
 	}
 
 	@Transactional(readOnly = false)
 	@Override
-	public void editar(Usuario usuario) {
-		dao.update(usuario);
+	public void editar(Pedido pedido) {
+		dao.update(pedido);
 		
 	}
 
@@ -38,18 +38,20 @@ public class UsuarioServiceImpl implements UsuarioService{
 	}
 
 	@Override
-	public Usuario buscarPorId(Long id) {
+	public Pedido buscarPorId(Long id) {
 		return dao.findById(id);
 	}
 
 	@Override
-	public List<Usuario> buscarTodos() {
+	public List<Pedido> buscarTodos() {
 		return dao.findAll();
 	}
 
 	@Override
-	public List<Usuario> buscarPorNome(String nome) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean pedidoTemLivros(Long id) {
+		if (buscarPorId(id).getLivro().getTitulo().isEmpty()) {
+			return false;
+		}
+		return true;
 	}
 }

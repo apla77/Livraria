@@ -3,8 +3,11 @@ package br.ifrn.edu.livraria.domain;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -27,4 +30,41 @@ public class Pedido extends AbstractEntity<Long>{
 	
 	@Column(nullable = false, unique = true)
 	private int quantidade;
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "livro_id_fk")
+	private Livro livro;
+
+	public LocalDate getDataPedido() {
+		return dataPedido;
+	}
+
+	public void setDataPedido(LocalDate dataPedido) {
+		this.dataPedido = dataPedido;
+	}
+
+	public BigDecimal getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(BigDecimal valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
+	}
+	
 }

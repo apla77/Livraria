@@ -50,6 +50,10 @@ public class Livro extends AbstractEntity<Long>{
 	@ManyToOne
 	@JoinColumn(name = "editora_id_fk")
 	private Editora editora;
+	
+	@ManyToOne
+	@JoinColumn(name = "pedido_id_fk")
+	private Pedido pedido;
 
 	public String getTitulo() {
 		return titulo;
@@ -129,6 +133,14 @@ public class Livro extends AbstractEntity<Long>{
 
 	public void setEditora(Editora editora) {
 		this.editora = editora;
+	}
+
+	public Pedido getPedido() {
+		return pedido;
+	}
+
+	public void setPedido(Pedido pedido) {
+		this.pedido = pedido;
 	}
 	
 }

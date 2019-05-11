@@ -18,5 +18,5 @@ public interface UsuarioService {
 	
 	List<Usuario> buscarPorNome(String nome);
 	
-	boolean usuarioTemPedidos(Long id);
+	//boolean usuarioTemPedidos(Long id);
 }
