@@ -28,23 +28,12 @@
 	            <form th:action="${pedido.id == null} ? @{/pedidos/salvar} : @{/pedidos/editar}" 
 	                  th:object="${pedido}" method="POST">
 	                	<div class="form-row">
-	                    	<div class="form-group col-md-6">
+	                    	<div class="form-group col-md-7">
 	                        	<label for="dataPedido">Data de Compra</label>
-	                        	<input type="date" class="form-control" id="dataPedido" th:field="*{dataPedido}"/>
+	                        	<input type="text" readonly class="form-control" id="dataPedido" th:field="*{dataPedido}"/>
 	                        	<div class="invalid-feedback"></div>
 	                    </div>
-	                     <div class="form-group col-md-6">
-	                        <label for="valorTotal">Valor Unitário</label>
-	                        <input type="text" class="form-control" id="valorTotal" data-mask="#.##0,00"
-	                               data-mask-reverse="true" th:field="*{valorTotal}"/>
-	                        <div class="invalid-feedback"></div>
-	                    </div> 
-	                     <div class="form-group col-md-6">
-	                        <label for="quantidade">Quantidade</label>
-	                        <input type="text" class="form-control" id="quantidade" th:field="*{quantidade}"/>
-	                        <div class="invalid-feedback"></div>
-	                    </div>
-	                    <div class="form-group col-md-6">
+	                    <div class="form-group col-md-7">
 	                        <label for="livro">Livro</label>
 	                        <select id="livro" class="form-control" th:field="*{livro}">
 	                            <option value="">Selecione...</option>
@@ -52,6 +41,20 @@
 	                        </select>
 	                        <div class="invalid-feedback"></div>
 	                    </div>
+	                    
+	                    <div class="form-group col-md-7">
+	                        <label for="quantidade">Quantidade</label>
+	                        <input type="text" class="form-control" id="quantidade" th:field="*{quantidade}"/>
+	                        <div class="invalid-feedback"></div>
+	                    </div>
+	                     <div class="form-group col-md-7">
+	                        <label for="valorTotal">Valor Unitário</label>
+	                        <input type="text" class="form-control" id="valorTotal" data-mask="#.##0,00"
+	                               data-mask-reverse="true" th:field="*{valorTotal}"/>
+	                        <div class="invalid-feedback"></div>
+	                    </div> 
+	                     
+	                    
 	                    
 	            </div>
 	                <input type="hidden" id="id" th:field="*{id}"/>

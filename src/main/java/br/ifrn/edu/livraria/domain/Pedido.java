@@ -2,6 +2,7 @@ package br.ifrn.edu.livraria.domain;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -22,7 +23,7 @@ public class Pedido extends AbstractEntity<Long>{
 
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name= "data_pedido", nullable = false, columnDefinition = "DATE")
-	private LocalDate dataPedido;
+	private Date dataPedido;
 	
 	@NumberFormat(style = Style.CURRENCY, pattern = "#,##0.00")
 	@Column(nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
@@ -35,12 +36,12 @@ public class Pedido extends AbstractEntity<Long>{
 	@JoinColumn(name = "livro_id_fk")
 	private Livro livro;
 
-	public LocalDate getDataPedido() {
+	public Date getDataPedido() {
 		return dataPedido;
 	}
 
-	public void setDataPedido(LocalDate dataPedido) {
-		this.dataPedido = dataPedido;
+	public void setDataPedido(Date date) {
+		this.dataPedido = date;
 	}
 
 	public BigDecimal getValorTotal() {

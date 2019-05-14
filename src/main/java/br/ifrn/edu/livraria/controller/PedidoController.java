@@ -1,5 +1,6 @@
 package br.ifrn.edu.livraria.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ public class PedidoController {
 	
 	@GetMapping("/cadastrar")
 	public String cadastrar(Pedido pedido) {
+		pedido.setDataPedido(new Date());
 		return "/pedido/cadastro";
 	}
 	

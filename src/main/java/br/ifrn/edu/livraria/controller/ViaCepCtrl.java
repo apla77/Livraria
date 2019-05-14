@@ -16,8 +16,8 @@ import br.ifrn.edu.livraria.to.EnderecoTO;
 public class ViaCepCtrl {
 	
 	private static final long serialVersionUID = 6046704732666502085L;
-	
-	@GetMapping(value="/getCep/{cep}")
+
+	  @GetMapping(value="/getCep/{cep}")
 	  public ResponseEntity<EnderecoTO> doObterCep(@PathVariable(name = "cep") String cep) {
 	    //
 	    /**
