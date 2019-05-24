@@ -17,7 +17,7 @@ public interface PedidoService {
 	
 	List<Pedido> buscarTodos();
 	
-	boolean pedidoTemLivros(Long id);
+	//boolean pedidoTemLivros(Long id);
 
 
 }

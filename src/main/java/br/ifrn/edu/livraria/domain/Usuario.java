@@ -79,6 +79,6 @@ public class Usuario extends AbstractEntity<Long>{
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
 	}
-	
+
 	
 }

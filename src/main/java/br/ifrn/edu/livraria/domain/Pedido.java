@@ -1,14 +1,18 @@
 package br.ifrn.edu.livraria.domain;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -30,11 +34,14 @@ public class Pedido extends AbstractEntity<Long>{
 	private BigDecimal valorTotal;
 	
 	@Column(nullable = false, unique = true)
-	private int quantidade;
+	private int quantidade = 1;
+	
+	@OneToMany(mappedBy = "pedido")
+	private List<Livro> livros;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "livro_id_fk")
-	private Livro livro;
+	@JoinColumn(name="usuario_id_fk")
+	private Usuario usuario;
 
 	public Date getDataPedido() {
 		return dataPedido;
@@ -60,12 +67,20 @@ public class Pedido extends AbstractEntity<Long>{
 		this.quantidade = quantidade;
 	}
 
-	public Livro getLivro() {
-		return livro;
+	public List<Livro> getLivros() {
+		return livros;
 	}
 
-	public void setLivro(Livro livro) {
-		this.livro = livro;
+	public void setLivros(List<Livro> livros) {
+		this.livros = livros;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 }

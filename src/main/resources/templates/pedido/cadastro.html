@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html layout:decorate="~{layout}">
-<head><meta charset="UTF-8"/></head>
+<head><meta charset="UTF-8"/>
+</head>
+
 <body>
-	
 	    <section class="layout-content" layout:fragment="corpo">
 	        <div class="page-header">
 	            <nav class="navbar navbar-expand-md navbar-top bg-light">
@@ -25,7 +26,7 @@
 	        
 	        	<div th:replace="fragments/alert"></div>
 	        
-	            <form th:action="${pedido.id == null} ? @{/pedidos/salvar} : @{/pedidos/editar}" 
+	            <form oninput="valorLivro();" th:action="${pedido.id == null} ? @{/pedidos/salvar} : @{/pedidos/editar}"
 	                  th:object="${pedido}" method="POST">
 	                	<div class="form-row">
 	                    	<div class="form-group col-md-7">
@@ -33,9 +34,10 @@
 	                        	<input type="text" readonly class="form-control" id="dataPedido" th:field="*{dataPedido}"/>
 	                        	<div class="invalid-feedback"></div>
 	                    </div>
+	                    
 	                    <div class="form-group col-md-7">
-	                        <label for="livro">Livro</label>
-	                        <select id="livro" class="form-control" th:field="*{livro}">
+	                        <label for="livros">Livro</label>
+	                        <select id="livros" class="form-control" th:field="*{livros}">
 	                            <option value="">Selecione...</option>
 	                            <option th:each="l : ${livros}" th:value="${l.id}" th:text="${l.titulo}"></option>
 	                        </select>
@@ -52,10 +54,8 @@
 	                        <input type="text" class="form-control" id="valorTotal" data-mask="#.##0,00"
 	                               data-mask-reverse="true" th:field="*{valorTotal}"/>
 	                        <div class="invalid-feedback"></div>
-	                    </div> 
-	                     
-	                    
-	                    
+	                    </div>      
+	                      
 	            </div>
 	                <input type="hidden" id="id" th:field="*{id}"/>
 	                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>

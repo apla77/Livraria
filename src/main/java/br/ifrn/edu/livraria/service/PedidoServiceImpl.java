@@ -47,6 +47,7 @@ public class PedidoServiceImpl implements PedidoService{
 		return dao.findAll();
 	}
 
+	/*
 	@Override
 	public boolean pedidoTemLivros(Long id) {
 		if (buscarPorId(id).getLivro().getTitulo().isEmpty()) {
@@ -54,4 +55,5 @@ public class PedidoServiceImpl implements PedidoService{
 		}
 		return true;
 	}
+	*/
 }

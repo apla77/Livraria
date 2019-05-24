@@ -1,5 +1,6 @@
 package br.ifrn.edu.livraria.domain;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -142,5 +143,5 @@ public class Livro extends AbstractEntity<Long>{
 	public void setPedido(Pedido pedido) {
 		this.pedido = pedido;
 	}
-	
+    
 }

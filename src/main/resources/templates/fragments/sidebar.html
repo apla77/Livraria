@@ -10,53 +10,91 @@
 				</ul>
 
 				<ul class="nav nav-pills">
-					<li class="nav-item"><span class="nav-link active" >Cadastros</span></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/categorias/cadastrar"> <i class="oi oi-plus"></i> <span> Categoria Livro</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/autores/cadastrar"> <i class="oi oi-plus"></i> <span>Autor</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/editoras/cadastrar"> <i class="oi oi-plus"></i> <span>Editora</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/livros/cadastrar"> <i class="oi oi-plus"></i> <span>Livro</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/cidades/cadastrar"> <i class="oi oi-plus"></i> <span>Cidade</span> 
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/usuarios/cadastrar"> <i class="oi oi-plus"></i> <span>Usuario</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/pedidos/cadastrar"> <i class="oi oi-plus"></i> <span>Pedido</span>
-					</a></li>
-				</ul>
-
-				<ul class="nav nav-pills">
-					<li class="nav-item"><span class="nav-link active" >Listagem</span></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/categorias/listar"> <i class="oi oi-spreadsheet"></i><span>Categoria</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/autores/listar"> <i class="oi oi-spreadsheet"></i> <span>Autor</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/editoras/listar"> <i	class="oi oi-spreadsheet"></i> <span>Editora</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/livros/listar"> <i class="oi oi-spreadsheet"></i> <span>Livro</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/cidades/listar"> <i	class="oi oi-spreadsheet"></i> <span>Cidade</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/usuarios/listar"> <i	class="oi oi-spreadsheet"></i> <span>Usuário</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link" 
-						href="/pedidos/listar"> <i	class="oi oi-spreadsheet"></i> <span>Pedido</span>
-					</a></li>
+					<li class="nav-item"><span class="nav-link active" >Menus</span></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="collapse"
+					href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+						<i class="menu-icon mdi mdi-content-copy"></i> <span
+						class="menu-title">Categoria</span> <i class="menu-arrow"></i></a>
+					<div class="collapse" id="ui-basic">
+						<ul class="nav flex-column sub-menu">
+							<li class="nav-item"><a class="nav-link"
+								th:href="@{/categorias/cadastrar}">Cadastrar</a></li>
+							<li class="nav-item"><a class="nav-link"
+								th:href="@{/categorias/listar}">Listar</a></li>
+						</ul>
+					</div></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="collapse"
+					href="#ui-autor" aria-expanded="false" aria-controls="ui-basic">
+						<i class="menu-icon mdi mdi-content-copy"></i> <span
+						class="menu-title">Autor</span> <i class="menu-arrow"></i></a>
+					<div class="collapse" id="ui-autor">
+						<ul class="nav flex-column sub-menu">
+							<li class="nav-autor"><a class="nav-link"
+								th:href="@{/autores/cadastrar}">Cadastrar</a></li>
+							<li class="nav-autor"><a class="nav-link"
+								th:href="@{/autores/listar}">Listar</a></li>
+						</ul>
+					</div></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="collapse"
+					href="#ui-editora" aria-expanded="false" aria-controls="ui-basic">
+						<i class="menu-icon mdi mdi-content-copy"></i> <span
+						class="menu-title">Editora</span> <i class="menu-arrow"></i></a>
+					<div class="collapse" id="ui-editora">
+						<ul class="nav flex-column sub-menu">
+							<li class="nav-editora"><a class="nav-link"
+								th:href="@{/editoras/cadastrar}">Cadastrar</a></li>
+							<li class="nav-editora"><a class="nav-link"
+								th:href="@{/editoras/listar}">Listar</a></li>
+						</ul>
+					</div></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="collapse"
+					href="#ui-livro" aria-expanded="false" aria-controls="ui-basic">
+						<i class="menu-icon mdi mdi-content-copy"></i> <span
+						class="menu-title">Livro</span> <i class="menu-arrow"></i></a>
+					<div class="collapse" id="ui-livro">
+						<ul class="nav flex-column sub-menu">
+							<li class="nav-livro"><a class="nav-link"
+								th:href="@{/livros/cadastrar}">Cadastrar</a></li>
+							<li class="nav-livro"><a class="nav-link"
+								th:href="@{/livros/listar}">Listar</a></li>
+						</ul>
+					</div></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="collapse"
+					href="#ui-cidade" aria-expanded="false" aria-controls="ui-basic">
+						<i class="menu-icon mdi mdi-content-copy"></i> <span
+						class="menu-title">Cidade</span> <i class="menu-arrow"></i></a>
+					<div class="collapse" id="ui-cidade">
+						<ul class="nav flex-column sub-menu">
+							<li class="nav-cidade"><a class="nav-link"
+								th:href="@{/cidades/cadastrar}">Cadastrar</a></li>
+							<li class="nav-cidade"><a class="nav-link"
+								th:href="@{/cidades/listar}">Listar</a></li>
+						</ul>
+					</div></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="collapse"
+					href="#ui-usuario" aria-expanded="false" aria-controls="ui-basic">
+						<i class="menu-icon mdi mdi-content-copy"></i> <span
+						class="menu-title">Usuario</span> <i class="menu-arrow"></i></a>
+					<div class="collapse" id="ui-usuario">
+						<ul class="nav flex-column sub-menu">
+							<li class="nav-usuario"><a class="nav-link"
+								th:href="@{/usuarios/cadastrar}">Cadastrar</a></li>
+							<li class="nav-usuario"><a class="nav-link"
+								th:href="@{/usuarios/listar}">Listar</a></li>
+						</ul>
+					</div></li>
+					<li class="nav-item"><a class="nav-link" data-toggle="collapse"
+					href="#ui-pedido" aria-expanded="false" aria-controls="ui-basic">
+						<i class="menu-icon mdi mdi-content-copy"></i> <span
+						class="menu-title">Pedido</span> <i class="menu-arrow"></i></a>
+					<div class="collapse" id="ui-pedido">
+						<ul class="nav flex-column sub-menu">
+							<li class="nav-pedido"><a class="nav-link"
+								th:href="@{/pedidos/cadastrar}">Cadastrar</a></li>
+							<li class="nav-pedido"><a class="nav-link"
+								th:href="@{/pedidos/listar}">Listar</a></li>
+						</ul>
+					</div></li>
 				</ul>
 			</nav>
 </body>
